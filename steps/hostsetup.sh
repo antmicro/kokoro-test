@@ -22,6 +22,9 @@ sudo apt-get install -y \
         git \
         wget \
 	python3 \
-	python3-pip
+	python3-pip \
+	screenfetch
+
+screenfetch
 
 sudo pip3 install git+https://github.com/antmicro/distant-rs.git
