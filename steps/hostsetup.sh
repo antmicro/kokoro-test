@@ -6,7 +6,7 @@ echo
 echo "========================================"
 echo "Host updating packages"
 echo "----------------------------------------"
-sudo apt -qqy update && sudo apt -qqy upgrade
+sudo apt -qqy update
 echo "----------------------------------------"
 
 echo
