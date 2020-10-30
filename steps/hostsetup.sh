@@ -44,6 +44,4 @@ tar xfz gcloud.tar.gz
 
 ./google-cloud-sdk/install.sh
 
-gcloud --quiet auth application-default login
-
 gcloud config set project foss-fpga-tools-ext-antmicro
