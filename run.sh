@@ -15,6 +15,8 @@ export GIT_DESCRIBE=$(git describe --match v*)
 
 echo "$KOKORO_TYPE run"
 
+cp example.xml sponge_log.xml
+
 gcloud config list
 
 wget https://raw.githubusercontent.com/antmicro/distant-rs/master/examples/get_inv.py

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="xml-test" errors="0" failures="0" skipped="0" tests="4" time="2.233" timestamp="2020-10-30T17:00:00.000000" hostname="test-hostname">
+    <testcase classname="test1.first" name="test1.first.first_test" time="1"/>
+    <testcase classname="test1.first" name="test1.first.second_test" time="5"/>
+    <testcase classname="test2.second" name="test2.second.first_test" time="3"/>
+    <testcase classname="test2.second" name="test2.second.second_test" time="4"/>
+  </testsuite>
+</testsuites>
