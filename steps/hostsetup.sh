@@ -43,3 +43,5 @@ curl -o gcloud.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads
 tar xfz gcloud.tar.gz
 
 ./google-cloud-sdk/install.sh
+
+gcloud config set project 292154118698
