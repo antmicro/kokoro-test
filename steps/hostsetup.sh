@@ -44,4 +44,4 @@ tar xfz gcloud.tar.gz
 
 ./google-cloud-sdk/install.sh
 
-gcloud config set project 292154118698
+gcloud config set project foss-fpga-tools-ext-antmicro
