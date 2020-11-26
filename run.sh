@@ -19,3 +19,8 @@ echo "$KOKORO_TYPE run"
 
 cp example.xml sponge_log.xml
 
+# run Renode
+
+renode --disable-xwt -e "q"
+find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml \;
+renode-test -t ci_tests.yaml
