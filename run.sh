@@ -22,5 +22,5 @@ cp example.xml sponge_log.xml
 # run Renode
 
 renode --disable-xwt -e "q"
-find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml \;
+find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml \; -quit
 renode-test -t ci_tests.yaml
