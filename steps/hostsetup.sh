@@ -23,6 +23,7 @@ sudo apt-get install -y \
         curl \
         git \
         wget \
+        libzmq5 \
 	python3.8 \
 	python3.8-dev \
 	python3.8-venv \
