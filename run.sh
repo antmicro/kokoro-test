@@ -19,8 +19,3 @@ echo "$KOKORO_TYPE run"
 
 cp example.xml sponge_log.xml
 
-gcloud config list
-
-wget https://raw.githubusercontent.com/antmicro/distant-rs/master/examples/get_inv.py
-
-python3 get_inv.py a69ce84c-54dd-46a5-a2d3-3ec29ea445e2
