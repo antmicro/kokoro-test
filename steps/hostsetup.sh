@@ -51,7 +51,10 @@ gcloud config set project foss-fpga-tools-ext-antmicro
 #install Renode
 
 curl -o renode.tar.gz https://dl.antmicro.com/projects/renode/builds/renode-1.11.0+20201125gitc608ee6.linux-portable.tar.gz
-mkdir -p renode
-tar xf renode.tar.gz --strip 1 -C renode
+
+mkdir -p /opt/renode
+tar xf renode.tar.gz --strip 1 -C /opt/renode
+ln -s /opt/renode/renode /usr/bin/renode
+ln -s /opt/renode/test.sh /usr/bin/renode-test
 sudo -H pip3 install -r /opt/renode/tests/requirements.txt
 
