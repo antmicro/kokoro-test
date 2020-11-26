@@ -46,3 +46,11 @@ tar xfz gcloud.tar.gz
 ./google-cloud-sdk/install.sh
 
 gcloud config set project foss-fpga-tools-ext-antmicro
+
+#install Renode
+
+curl -o renode.tar.gz https://dl.antmicro.com/projects/renode/builds/renode-1.11.0+20201125gitc608ee6.linux-portable.tar.gz
+mkdir -p renode
+tar xf renode.tar.gz --strip 1 -C renode
+sudo pip3 install -r renode/tests/requirements.txt
+
