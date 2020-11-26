@@ -38,10 +38,10 @@ with open(tmp.name, 'w') as log:
 
 
 expected_summary_paths = [
-        'output/tests/nunit_output.xml',
-        'output/tests/robot_output.xml',
-        'output/tests/log.html',
-        'output/tests/report.html',
+        'nunit_output.xml',
+        'robot_output.xml',
+        'log.html',
+        'report.html',
         ]
 
 existing_summary_paths = [x for x in expected_summary_paths if os.path.isfile(x)]
