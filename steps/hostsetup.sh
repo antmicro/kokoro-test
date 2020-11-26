@@ -37,8 +37,8 @@ sudo update-alternatives --config python3
 
 curl https://bootstrap.pypa.io/get-pip.py | sudo python3.8
 
-sudo pip3 install git+https://github.com/AdamOlech/google-auth-library-python.git
-sudo pip3 install git+https://github.com/antmicro/distant-rs.git
+sudo -H pip3 install git+https://github.com/AdamOlech/google-auth-library-python.git
+sudo -H pip3 install git+https://github.com/antmicro/distant-rs.git
 
 curl -o gcloud.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-316.0.0-linux-x86_64.tar.gz
 
@@ -53,5 +53,5 @@ gcloud config set project foss-fpga-tools-ext-antmicro
 curl -o renode.tar.gz https://dl.antmicro.com/projects/renode/builds/renode-1.11.0+20201125gitc608ee6.linux-portable.tar.gz
 mkdir -p renode
 tar xf renode.tar.gz --strip 1 -C renode
-sudo pip3 install -r renode/tests/requirements.txt
+sudo -H pip3 install -r /opt/renode/tests/requirements.txt
 
