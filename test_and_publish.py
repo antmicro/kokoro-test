@@ -24,7 +24,7 @@ with open(tmp.name, 'w') as log:
     # run the actual testing procedure
     log.write("Running Renode tests...")
 
-    process = subprocess.Popen(["/usr/bin/renode-test", "--listener", os.path.join(this_path, f"results_listener.py:{remote.invocation_id}")] + sys.argv[1:], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=os.environ.copy())
+    process = subprocess.Popen(["/usr/bin/renode-test", "--listener", os.path.join(this_path, f"results_listener.py:{remote.invocation_id}--{remote.auth_token}")] + sys.argv[1:], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=os.environ.copy())
     ret = 0
 
     while True:

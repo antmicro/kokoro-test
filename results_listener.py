@@ -11,12 +11,8 @@ class results_listener:
         self.ROBOT_LISTENER_API_VERSION = 3
         self._x_start_time = {}
         self._x_logs = {}
-        self.remote = Invocation(invocation_id=attr)
-        try:
-            self.remote.open()
-            self.remote.announce_target(attr)
-        except Exception as ex:
-            print(ex)
+        attr_split = attr.split("--")
+        self.remote = Invocation(invocation_id=attr_split[0], auth_token=attr_split[1])
 
 
     def decorate(self, text):
