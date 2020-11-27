@@ -15,7 +15,9 @@ this_path = os.path.abspath(os.path.dirname(__file__))
 remote = Invocation()
 remote.open()
 
-print(f"https://source.cloud.google.com/results/invocations/{remote.invocation_id}")
+invocation_addr = f"https://source.cloud.google.com/results/invocations/{remote.invocation_id}"
+
+print(invocation_addr)
 
 remote.announce_target("Test Summary")
 
@@ -57,4 +59,7 @@ remote.send_file("build.log", tmp.name)
 # What are these codes?
 remote.update_status(5 if ret == 0 else 6)
 remote.close()
+
+print(invocation_addr)
+
 sys.exit(ret)

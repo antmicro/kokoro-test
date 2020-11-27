@@ -37,7 +37,7 @@ class results_listener:
 
 
     def start_test(self, data, result):
-        self.remote.announce_target(data.longname)
+        self.remote.announce_target(data.longname.replace(" ", "_"))
         msg = "+++++ Starting test '{}'".format(data.longname)
         self._x_start_time[data.longname] = time.time()
         self._x_logs[data.longname] = msg
@@ -68,11 +68,13 @@ class results_listener:
 
         emu_state = f"output/tests/snapshots/{data.longname.replace(' ', '_')}.fail.save"
         tmp = tempfile.NamedTemporaryFile()
-        with open(tmp.name, 'w') as f:
+        with open(tmp.name, 'wb') as f:
             f.write((self._x_logs[data.longname] + '\n' + self.decorate(result.message)).encode('utf-8')) 
 
         if os.path.isfile(emu_state):
             self.remote.send_file(os.path.basename(emu_state), emu_state)
 
-        self.remote.add_log_to_target(data.longname, tmp.name)
-        self.remote.finalize_target(data.longname, result.passed)
+        rs_target = data.longname.replace(" ", "_")
+
+        self.remote.add_log_to_target(rs_target, tmp.name)
+        self.remote.finalize_target(rs_target, result.passed)
