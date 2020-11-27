@@ -1,0 +1,6 @@
+ci_tests.yaml
+__pycache__/
+log.html
+report.html
+results-*.robot.xml
+robot_output.xml
