@@ -22,7 +22,7 @@ remote.announce_target("Test Summary")
 tmp = tempfile.NamedTemporaryFile()
 with open(tmp.name, 'w') as log:
     # run the actual testing procedure
-    log.write("Running Renode tests...")
+    log.write("Running Renode tests...\n")
 
     process = subprocess.Popen(["/usr/bin/renode-test", "--listener", os.path.join(this_path, f"results_listener.py:{remote.invocation_id}--{remote.auth_token}")] + sys.argv[1:], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=os.environ.copy())
     ret = 0
@@ -33,7 +33,7 @@ with open(tmp.name, 'w') as log:
         if ret is not None:
             break
         if line:
-            log.write(line)
+            log.write(line+'\n')
             print(line)
 
 
