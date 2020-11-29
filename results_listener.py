@@ -3,6 +3,7 @@ import tempfile
 import os
 import traceback
 import logging
+from datetime import datetime
 from distantrs import Invocation
 
 class results_listener:
@@ -38,7 +39,7 @@ class results_listener:
 
     def start_test(self, data, result):
         self.remote.announce_target(data.longname.replace(" ", "_"))
-        msg = "+++++ Starting test '{}'".format(data.longname)
+        msg = "[{1}] +++++ Starting test '{0}'".format(data.longname, str(datetime.now().time()))
         self._x_start_time[data.longname] = time.time()
         self._x_logs[data.longname] = msg
 
@@ -63,7 +64,7 @@ class results_listener:
         duration = time.time() - self._x_start_time[data.longname]
         del self._x_start_time[data.longname]
 
-        msg = "+++++ Finished test '{0}' in {1:.2f} seconds with status {2}".format(data.longname, duration, status)
+        msg = "[{3}] +++++ Finished test '{0}' in {1:.2f} seconds with status {2}".format(data.longname, duration, status, str(datetime.now().time())
         self._x_logs[data.longname] += f"\n{msg}"
 
         emu_state = f"output/tests/snapshots/{data.longname.replace(' ', '_')}.fail.save"
