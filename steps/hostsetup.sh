@@ -37,7 +37,6 @@ sudo update-alternatives --config python3
 
 curl https://bootstrap.pypa.io/get-pip.py | sudo python3.8
 
-sudo -H pip3 install git+https://github.com/AdamOlech/google-auth-library-python.git
 sudo -H pip3 install git+https://github.com/antmicro/distant-rs.git
 
 curl -o gcloud.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-316.0.0-linux-x86_64.tar.gz
