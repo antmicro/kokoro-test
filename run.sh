@@ -34,3 +34,5 @@ find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml 
 python3 test_and_publish.py -t ci_tests.yaml -j`nproc` -P 12000
 
 rm $GOOGLE_APPLICATION_CREDENTIALS
+
+ls $KOKORO_GFILE_DIR
