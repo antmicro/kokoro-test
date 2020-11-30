@@ -18,6 +18,9 @@ export DISTANT_RS_BUCKET=tflite-tests-artifacts
 
 echo "$KOKORO_TYPE run"
 
+mkdir -p build/py
+mv example.xml build/py/sponge_log.xml
+
 gsutil cp gs://tflite-tests-priv-bucket/secrets/tflite.json $GOOGLE_APPLICATION_CREDENTIALS
 
 # run Renode
