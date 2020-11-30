@@ -31,6 +31,6 @@ renode --disable-xwt -e "q"
 
 find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml \; -quit
 
-python3 test_and_publish.py -t ci_tests.yaml -j`nproc` -P 12000
+python3 test_and_publish.py -t ci_tests.yaml -j`nproc` -P 12000 || true
 
 rm $GOOGLE_APPLICATION_CREDENTIALS
