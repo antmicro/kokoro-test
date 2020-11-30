@@ -26,8 +26,10 @@ gsutil cp gs://tflite-tests-priv-bucket/secrets/tflite.json $GOOGLE_APPLICATION_
 # run Renode
 
 renode --disable-xwt -e "q"
-find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml.tmp \;
-grep -vi icicle ci_tests.yaml.tmp | grep -v FU540 > ci_tests.yaml
+#find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml.tmp \;
+#grep -vi icicle ci_tests.yaml.tmp | grep -v FU540 > ci_tests.yaml
+
+find  /opt/renode/tests/platforms -name *robot -exec echo - {} >> ci_tests.yaml \; -quit
 
 python3 test_and_publish.py -t ci_tests.yaml -j`nproc` -P 12000
 
